@@ -42,10 +42,8 @@ export function Services() {
               </div>
               <div className="p-6">
                 <h3 className="text-lg font-semibold mb-2">{s.title}</h3>
-                <p className="text-sm text-muted-foreground mb-4 leading-relaxed">{s.desc}</p>
-                <a href="#contact" className="inline-flex items-center gap-1 text-sm font-semibold text-primary hover:gap-2 transition-all">
-                  Learn More <ArrowUpRight className="h-4 w-4" />
-                </a>
+                <p className="text-sm text-muted-foreground leading-relaxed">{s.desc}</p>
+
               </div>
             </div>
           ))}
