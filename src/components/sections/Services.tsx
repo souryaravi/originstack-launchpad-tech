@@ -1,4 +1,4 @@
-import { Code2, Globe, Smartphone, BrainCircuit, Cloud, Palette, BarChart3, Briefcase, ArrowUpRight } from "lucide-react";
+import { Code2, Globe, Smartphone, BrainCircuit, Cloud, Palette, BarChart3, Briefcase } from "lucide-react";
 
 const services = [
   { icon: Code2, title: "Custom Software Development", desc: "Tailored enterprise software engineered for performance and scale." },
