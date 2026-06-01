@@ -1,9 +1,53 @@
-const groups = [
-  { title: "Frontend", items: ["React", "Next.js", "Vue", "TanStack"] },
-  { title: "Backend", items: ["Python", "Django", "FastAPI", "Node.js"] },
-  { title: "Database", items: ["PostgreSQL", "MySQL", "MongoDB", "Redis"] },
-  { title: "Cloud & DevOps", items: ["AWS", "Azure", "Docker", "Kubernetes"] },
-  { title: "AI & Data", items: ["OpenAI", "LangChain", "Vector DBs", "RAG"] },
+const icon = (slug: string) => `https://cdn.simpleicons.org/${slug}`;
+
+type Tech = { name: string; slug: string };
+
+const groups: { title: string; items: Tech[] }[] = [
+  {
+    title: "Frontend",
+    items: [
+      { name: "React", slug: "react" },
+      { name: "Next.js", slug: "nextdotjs" },
+      { name: "TypeScript", slug: "typescript" },
+      { name: "Tailwind CSS", slug: "tailwindcss" },
+    ],
+  },
+  {
+    title: "Backend",
+    items: [
+      { name: "Python", slug: "python" },
+      { name: "Django", slug: "django" },
+      { name: "FastAPI", slug: "fastapi" },
+      { name: "Node.js", slug: "nodedotjs" },
+    ],
+  },
+  {
+    title: "Database",
+    items: [
+      { name: "PostgreSQL", slug: "postgresql" },
+      { name: "MySQL", slug: "mysql" },
+      { name: "MongoDB", slug: "mongodb" },
+      { name: "Redis", slug: "redis" },
+    ],
+  },
+  {
+    title: "Cloud & DevOps",
+    items: [
+      { name: "AWS", slug: "amazonwebservices" },
+      { name: "Azure", slug: "microsoftazure" },
+      { name: "Docker", slug: "docker" },
+      { name: "Kubernetes", slug: "kubernetes" },
+    ],
+  },
+  {
+    title: "AI & Data",
+    items: [
+      { name: "OpenAI", slug: "openai" },
+      { name: "LangChain", slug: "langchain" },
+      { name: "TensorFlow", slug: "tensorflow" },
+      { name: "PyTorch", slug: "pytorch" },
+    ],
+  },
 ];
 
 export function TechStack() {
@@ -21,13 +65,28 @@ export function TechStack() {
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-5">
           {groups.map((g) => (
-            <div key={g.title} className="rounded-2xl border border-border bg-card p-6 shadow-card hover:shadow-elegant transition-smooth">
-              <div className="text-sm font-semibold text-primary uppercase tracking-wider mb-4">{g.title}</div>
-              <div className="space-y-2">
+            <div
+              key={g.title}
+              className="rounded-2xl border border-border bg-card p-6 shadow-card hover:shadow-elegant transition-smooth"
+            >
+              <div className="text-sm font-semibold text-primary uppercase tracking-wider mb-5 text-center">
+                {g.title}
+              </div>
+              <div className="grid grid-cols-2 gap-3">
                 {g.items.map((t) => (
-                  <div key={t} className="flex items-center gap-2 text-sm font-medium px-3 py-2 rounded-lg bg-muted/50 hover:bg-gradient-card transition-smooth">
-                    <span className="h-2 w-2 rounded-full bg-gradient-brand" />
-                    {t}
+                  <div
+                    key={t.name}
+                    className="group flex flex-col items-center justify-center gap-2 p-3 rounded-xl bg-muted/40 hover:bg-gradient-card hover:-translate-y-1 transition-smooth"
+                  >
+                    <img
+                      src={icon(t.slug)}
+                      alt={t.name}
+                      className="h-9 w-9 object-contain group-hover:scale-110 transition-smooth"
+                      loading="lazy"
+                    />
+                    <span className="text-xs font-medium text-center text-foreground/80">
+                      {t.name}
+                    </span>
                   </div>
                 ))}
               </div>

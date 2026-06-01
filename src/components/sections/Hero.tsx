@@ -51,6 +51,9 @@ export function Hero() {
             <span className="font-medium">From Origin to Innovation</span>
           </div>
 
+          <div className="text-base md:text-lg font-semibold uppercase tracking-[0.2em] text-primary mb-4">
+            Welcome to OriginStack
+          </div>
           <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold leading-[1.05] mb-6">
             Building Digital Products That{" "}
             <span className="text-gradient-brand">Drive Business Growth</span>

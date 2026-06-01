@@ -16,6 +16,7 @@ const nav = [
 export function Header() {
   const [scrolled, setScrolled] = useState(false);
   const [open, setOpen] = useState(false);
+  const [active, setActive] = useState<string>("#home");
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 20);
@@ -24,31 +25,70 @@ export function Header() {
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
 
+  useEffect(() => {
+    // Sync active tab to URL hash on click / load
+    const syncFromHash = () => {
+      if (window.location.hash) setActive(window.location.hash);
+    };
+    syncFromHash();
+    window.addEventListener("hashchange", syncFromHash);
+
+    // Scroll spy
+    const ids = nav.map((n) => n.href.slice(1));
+    const sections = ids
+      .map((id) => document.getElementById(id))
+      .filter((el): el is HTMLElement => !!el);
+
+    const observer = new IntersectionObserver(
+      (entries) => {
+        const visible = entries
+          .filter((e) => e.isIntersecting)
+          .sort((a, b) => b.intersectionRatio - a.intersectionRatio)[0];
+        if (visible) setActive(`#${visible.target.id}`);
+      },
+      { rootMargin: "-40% 0px -50% 0px", threshold: [0, 0.25, 0.5, 1] },
+    );
+    sections.forEach((s) => observer.observe(s));
+
+    return () => {
+      window.removeEventListener("hashchange", syncFromHash);
+      observer.disconnect();
+    };
+  }, []);
+
   return (
     <header
       className={`fixed top-0 left-0 right-0 z-50 transition-smooth ${
-        scrolled ? "glass-strong border-b border-border py-3" : "bg-transparent py-5"
+        scrolled ? "glass-strong border-b border-border py-2" : "bg-transparent py-3"
       }`}
     >
       <div className="container mx-auto px-4 md:px-6 flex items-center justify-between">
-        <a href="#home" className="flex items-center gap-2 group">
+        <a href="#home" onClick={() => setActive("#home")} className="flex items-center gap-2 group">
           <img
             src={logo}
             alt="OriginStack Technologies"
-            className="h-10 md:h-12 w-auto transition-smooth group-hover:scale-105"
+            className="h-16 md:h-20 w-auto transition-smooth group-hover:scale-105"
           />
         </a>
 
         <nav className="hidden lg:flex items-center gap-8">
-          {nav.map((n) => (
-            <a
-              key={n.href}
-              href={n.href}
-              className="text-sm font-medium text-foreground/80 hover:text-primary transition-smooth relative after:absolute after:bottom-[-4px] after:left-0 after:h-[2px] after:w-0 after:bg-primary after:transition-all hover:after:w-full"
-            >
-              {n.label}
-            </a>
-          ))}
+          {nav.map((n) => {
+            const isActive = active === n.href;
+            return (
+              <a
+                key={n.href}
+                href={n.href}
+                onClick={() => setActive(n.href)}
+                className={`text-sm font-medium transition-smooth relative after:absolute after:bottom-[-4px] after:left-0 after:h-[2px] after:bg-primary after:transition-all ${
+                  isActive
+                    ? "text-primary after:w-full"
+                    : "text-foreground/80 hover:text-primary after:w-0 hover:after:w-full"
+                }`}
+              >
+                {n.label}
+              </a>
+            );
+          })}
         </nav>
 
         <div className="hidden lg:flex items-center gap-2">
@@ -72,16 +112,24 @@ export function Header() {
       {open && (
         <div className="lg:hidden glass-strong border-t border-border mt-3 animate-fade-up">
           <nav className="container mx-auto px-4 py-4 flex flex-col gap-3">
-            {nav.map((n) => (
-              <a
-                key={n.href}
-                href={n.href}
-                onClick={() => setOpen(false)}
-                className="text-base font-medium py-2 hover:text-primary transition-smooth"
-              >
-                {n.label}
-              </a>
-            ))}
+            {nav.map((n) => {
+              const isActive = active === n.href;
+              return (
+                <a
+                  key={n.href}
+                  href={n.href}
+                  onClick={() => {
+                    setActive(n.href);
+                    setOpen(false);
+                  }}
+                  className={`text-base font-medium py-2 transition-smooth ${
+                    isActive ? "text-primary" : "hover:text-primary"
+                  }`}
+                >
+                  {n.label}
+                </a>
+              );
+            })}
             <Button variant="brand" className="mt-2" asChild>
               <a href="#contact" onClick={() => setOpen(false)}>Get Started</a>
             </Button>
