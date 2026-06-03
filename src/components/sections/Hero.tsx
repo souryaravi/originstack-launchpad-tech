@@ -1,6 +1,7 @@
 import { Button } from "@/components/ui/button";
 import { ArrowRight, Sparkles } from "lucide-react";
 import heroBg from "@/assets/hero-bg.jpg";
+import heroShowcase from "@/assets/hero-showcase.jpg";
 
 const stats = [
   { value: "20+", label: "Projects Delivered" },
