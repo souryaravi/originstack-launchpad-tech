@@ -30,10 +30,10 @@ export function Hero() {
           alt="OriginStack Technologies background"
           width={1920}
           height={1280}
-          className="w-full h-full object-cover opacity-40 dark:opacity-50"
+          className="w-full h-full object-cover"
         />
-        <div className="absolute inset-0 bg-gradient-to-b from-background/60 via-background/80 to-background" />
-        <div className="absolute inset-0 bg-gradient-hero" />
+        <div className="absolute inset-0 bg-gradient-to-b from-background/40 via-background/55 to-background/85" />
+        <div className="absolute inset-0 bg-gradient-hero opacity-60" />
       </div>
 
       {/* Floating tech chips */}
