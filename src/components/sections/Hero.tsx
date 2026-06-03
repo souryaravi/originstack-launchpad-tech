@@ -26,11 +26,11 @@ export function Hero() {
       {/* Background */}
       <div className="absolute inset-0 -z-10">
         <img
-          src={heroBg}
-          alt=""
+          src={heroShowcase}
+          alt="OriginStack Technologies background"
           width={1920}
           height={1280}
-          className="w-full h-full object-cover opacity-30 dark:opacity-40"
+          className="w-full h-full object-cover opacity-40 dark:opacity-50"
         />
         <div className="absolute inset-0 bg-gradient-to-b from-background/60 via-background/80 to-background" />
         <div className="absolute inset-0 bg-gradient-hero" />
