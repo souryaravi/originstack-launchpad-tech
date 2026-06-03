@@ -2,10 +2,34 @@ import { useEffect, useRef, useState } from "react";
 import { Users, BrainCircuit, Network, LifeBuoy } from "lucide-react";
 
 const items = [
-  { icon: Users, value: 50, suffix: "+", label: "Expert Tech Team", desc: "Senior engineers, architects, designers across 5+ domains." },
-  { icon: BrainCircuit, value: 25, suffix: "+", label: "AI & Modern Tech Focus", desc: "GenAI, RAG, LLM agents, and modern data platforms." },
-  { icon: Network, value: 99, suffix: "%", label: "Scalable Architecture", desc: "Cloud-native systems built for uptime and growth." },
-  { icon: LifeBuoy, value: 24, suffix: "/7", label: "Long-Term Support", desc: "Continuous monitoring, iteration, and partnership." },
+  {
+    icon: Users,
+    value: 20,
+    suffix: "+",
+    label: "Expert Tech Team",
+    desc: "Senior engineers, architects, designers across 5+ domains.",
+  },
+  {
+    icon: BrainCircuit,
+    value: 5,
+    suffix: "+",
+    label: "AI & Modern Tech Focus",
+    desc: "GenAI, RAG, LLM agents, and modern data platforms.",
+  },
+  {
+    icon: Network,
+    value: 99,
+    suffix: "%",
+    label: "Scalable Architecture",
+    desc: "Cloud-native systems built for uptime and growth.",
+  },
+  {
+    icon: LifeBuoy,
+    value: 24,
+    suffix: "/7",
+    label: "Long-Term Support",
+    desc: "Continuous monitoring, iteration, and partnership.",
+  },
 ];
 
 function Counter({ to, suffix }: { to: number; suffix: string }) {
@@ -29,7 +53,12 @@ function Counter({ to, suffix }: { to: number; suffix: string }) {
     io.observe(ref.current);
     return () => io.disconnect();
   }, [to]);
-  return <span ref={ref}>{val}{suffix}</span>;
+  return (
+    <span ref={ref}>
+      {val}
+      {suffix}
+    </span>
+  );
 }
 
 export function WhyUs() {

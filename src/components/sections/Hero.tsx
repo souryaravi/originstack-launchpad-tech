@@ -3,10 +3,10 @@ import { ArrowRight, Sparkles } from "lucide-react";
 import heroBg from "@/assets/hero-bg.jpg";
 
 const stats = [
-  { value: "50+", label: "Projects Delivered" },
-  { value: "20+", label: "Happy Clients" },
+  { value: "20+", label: "Projects Delivered" },
+  { value: "5+", label: "Happy Clients" },
   { value: "5+", label: "Tech Domains" },
-  { value: "100%", label: "Client Commitment" },
+  { value: "90%", label: "Client Commitment" },
 ];
 
 const floats = [
@@ -19,7 +19,10 @@ const floats = [
 
 export function Hero() {
   return (
-    <section id="home" className="relative min-h-screen flex items-center overflow-hidden pt-24 pb-16">
+    <section
+      id="home"
+      className="relative min-h-screen flex items-center overflow-hidden pt-24 pb-16"
+    >
       {/* Background */}
       <div className="absolute inset-0 -z-10">
         <img

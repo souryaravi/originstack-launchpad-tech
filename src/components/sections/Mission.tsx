@@ -1,12 +1,36 @@
 import { Rocket, Layers, Sparkles, Bot, Heart, Zap } from "lucide-react";
 
 const items = [
-  { icon: Rocket, title: "Driving Innovation", desc: "We craft pioneering software that pushes boundaries and unlocks new business value." },
-  { icon: Layers, title: "Scalable Solutions", desc: "Architectures built to grow with you — from MVP to global enterprise scale." },
-  { icon: Sparkles, title: "Digital Excellence", desc: "Pixel-perfect interfaces and engineering rigor in every line of code we ship." },
-  { icon: Bot, title: "Business Automation", desc: "Streamline workflows with intelligent automation, AI agents, and integrations." },
-  { icon: Heart, title: "Customer Success", desc: "Long-term partnership focused on measurable outcomes and continuous improvement." },
-  { icon: Zap, title: "Emerging Technologies", desc: "Generative AI, edge computing, and cloud-native — adopted with engineering discipline." },
+  {
+    icon: Rocket,
+    title: "Driving Innovation",
+    desc: "We craft pioneering software that pushes boundaries and unlocks new business value.",
+  },
+  {
+    icon: Layers,
+    title: "Scalable Solutions",
+    desc: "Architectures built to grow with you — from MVP to global enterprise scale.",
+  },
+  {
+    icon: Sparkles,
+    title: "Digital Excellence",
+    desc: "Pixel-perfect interfaces and engineering rigor in every line of code we ship.",
+  },
+  {
+    icon: Bot,
+    title: "Business Automation",
+    desc: "Streamline workflows with intelligent automation, AI agents, and integrations.",
+  },
+  {
+    icon: Heart,
+    title: "Customer Success",
+    desc: "Long-term partnership focused on measurable outcomes and continuous improvement.",
+  },
+  {
+    icon: Zap,
+    title: "Emerging Technologies",
+    desc: "Generative AI, edge computing, and cloud-native — adopted with engineering discipline.",
+  },
 ];
 
 export function Mission() {
@@ -18,7 +42,8 @@ export function Mission() {
             Our Mission
           </div>
           <h2 className="text-3xl md:text-5xl font-bold mb-4">
-            Empowering businesses through <span className="text-gradient-brand">innovative technology</span>
+            Empowering businesses through{" "}
+            <span className="text-gradient-brand">innovative technology</span>
           </h2>
           <p className="text-muted-foreground text-lg">
             Six pillars that define how we build, ship, and partner with the teams we serve.

@@ -8,7 +8,7 @@ import { Services } from "@/components/sections/Services";
 import { Industries } from "@/components/sections/Industries";
 import { Process } from "@/components/sections/Process";
 import { TechStack } from "@/components/sections/TechStack";
-import { Testimonials } from "@/components/sections/Testimonials";
+// import { Testimonials } from "@/components/sections/Testimonials";
 import { Contact } from "@/components/sections/Contact";
 import { Footer } from "@/components/sections/Footer";
 import { Toaster } from "@/components/ui/sonner";
@@ -17,9 +17,16 @@ export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
       { title: "OriginStack Technologies — From Origin to Innovation" },
-      { name: "description", content: "Premium software development, AI, cloud, and digital transformation services for startups and enterprises." },
+      {
+        name: "description",
+        content:
+          "Premium software development, AI, cloud, and digital transformation services for startups and enterprises.",
+      },
       { property: "og:title", content: "OriginStack Technologies" },
-      { property: "og:description", content: "Building digital products that drive business growth." },
+      {
+        property: "og:description",
+        content: "Building digital products that drive business growth.",
+      },
       { property: "og:type", content: "website" },
     ],
   }),
@@ -39,7 +46,7 @@ function Index() {
         <Industries />
         <Process />
         <TechStack />
-        <Testimonials />
+        {/* <Testimonials /> */}
         <Contact />
       </main>
       <Footer />

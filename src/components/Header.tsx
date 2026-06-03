@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useEffect, useState, useRef } from "react";
 import { Menu, X } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { ThemeToggle } from "./ThemeToggle";
@@ -12,6 +12,83 @@ const nav = [
   { href: "#process", label: "Process" },
   { href: "#contact", label: "Contact" },
 ];
+
+function ResponsiveLogo() {
+  const [isDark, setIsDark] = useState(true);
+  const [processedSrc, setProcessedSrc] = useState<string>(logo);
+
+  useEffect(() => {
+    const checkTheme = () => {
+      setIsDark(document.documentElement.classList.contains("dark"));
+    };
+    checkTheme();
+
+    const observer = new MutationObserver(checkTheme);
+    observer.observe(document.documentElement, {
+      attributes: true,
+      attributeFilter: ["class"],
+    });
+
+    return () => observer.disconnect();
+  }, []);
+
+  useEffect(() => {
+    if (isDark) {
+      setProcessedSrc(logo);
+      return;
+    }
+
+    const img = new Image();
+    img.crossOrigin = "anonymous";
+
+    const process = () => {
+      const canvas = document.createElement("canvas");
+      canvas.width = img.naturalWidth;
+      canvas.height = img.naturalHeight;
+      const ctx = canvas.getContext("2d");
+      if (!ctx) return;
+
+      ctx.drawImage(img, 0, 0);
+
+      const imageData = ctx.getImageData(0, 0, canvas.width, canvas.height);
+      const data = imageData.data;
+      const startY = Math.floor(canvas.height * 0.6);
+
+      for (let y = startY; y < canvas.height; y++) {
+        for (let x = 0; x < canvas.width; x++) {
+          const idx = (y * canvas.width + x) * 4;
+          const r = data[idx];
+          const g = data[idx + 1];
+          const b = data[idx + 2];
+          const a = data[idx + 3];
+
+          if (a > 0 && r > 210 && g > 210 && b > 210) {
+            data[idx] = 102;
+            data[idx + 1] = 102;
+            data[idx + 2] = 102;
+          }
+        }
+      }
+
+      ctx.putImageData(imageData, 0, 0);
+      setProcessedSrc(canvas.toDataURL());
+    };
+
+    img.onload = process;
+    img.src = logo;
+    if (img.complete) {
+      process();
+    }
+  }, [isDark]);
+
+  return (
+    <img
+      src={processedSrc}
+      alt="OriginStack Technologies"
+      className="h-12 md:h-16 w-auto transition-smooth group-hover:scale-105"
+    />
+  );
+}
 
 export function Header() {
   const [scrolled, setScrolled] = useState(false);
@@ -63,12 +140,12 @@ export function Header() {
       }`}
     >
       <div className="container mx-auto px-4 md:px-6 flex items-center justify-between">
-        <a href="#home" onClick={() => setActive("#home")} className="flex items-center gap-2 group">
-          <img
-            src={logo}
-            alt="OriginStack Technologies"
-            className="h-16 md:h-20 w-auto transition-smooth group-hover:scale-105"
-          />
+        <a
+          href="#home"
+          onClick={() => setActive("#home")}
+          className="flex items-center gap-2 group"
+        >
+          <ResponsiveLogo />
         </a>
 
         <nav className="hidden lg:flex items-center gap-8">
@@ -131,7 +208,9 @@ export function Header() {
               );
             })}
             <Button variant="brand" className="mt-2" asChild>
-              <a href="#contact" onClick={() => setOpen(false)}>Get Started</a>
+              <a href="#contact" onClick={() => setOpen(false)}>
+                Get Started
+              </a>
             </Button>
           </nav>
         </div>

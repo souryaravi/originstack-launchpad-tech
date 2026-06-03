@@ -1,12 +1,36 @@
 import { Globe, Repeat, Compass, GitBranch, Leaf, ShieldCheck } from "lucide-react";
 
 const items = [
-  { icon: Globe, title: "Global Technology Partner", desc: "Serving teams across continents with consistent quality and engineering excellence." },
-  { icon: Repeat, title: "Digital Transformation", desc: "End-to-end modernization — from legacy systems to cloud-native platforms." },
-  { icon: Compass, title: "Future-Ready Solutions", desc: "Architectures designed for what's next: AI, edge, real-time, and serverless." },
-  { icon: GitBranch, title: "Continuous Innovation", desc: "We invest in R&D and bring proven new tech into your roadmap responsibly." },
-  { icon: Leaf, title: "Sustainable Growth", desc: "Efficient systems and clean code that reduce cost and carbon at scale." },
-  { icon: ShieldCheck, title: "Trusted Business Impact", desc: "Measured outcomes, transparent processes, and accountable delivery." },
+  {
+    icon: Globe,
+    title: "Global Technology Partner",
+    desc: "Serving teams across continents with consistent quality and engineering excellence.",
+  },
+  {
+    icon: Repeat,
+    title: "Digital Transformation",
+    desc: "End-to-end modernization — from legacy systems to cloud-native platforms.",
+  },
+  {
+    icon: Compass,
+    title: "Future-Ready Solutions",
+    desc: "Architectures designed for what's next: AI, edge, real-time, and serverless.",
+  },
+  {
+    icon: GitBranch,
+    title: "Continuous Innovation",
+    desc: "We invest in R&D and bring proven new tech into your roadmap responsibly.",
+  },
+  {
+    icon: Leaf,
+    title: "Sustainable Growth",
+    desc: "Efficient systems and clean code that reduce cost and carbon at scale.",
+  },
+  {
+    icon: ShieldCheck,
+    title: "Trusted Business Impact",
+    desc: "Measured outcomes, transparent processes, and accountable delivery.",
+  },
 ];
 
 export function Vision() {

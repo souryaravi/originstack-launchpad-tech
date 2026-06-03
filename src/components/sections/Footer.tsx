@@ -9,22 +9,48 @@ export function Footer() {
           <div className="md:col-span-1">
             <img src={logo} alt="OriginStack Technologies" className="h-14 w-auto mb-4" />
             <p className="text-white/70 text-sm italic mb-4">"From Origin to Innovation."</p>
-            <p className="text-white/60 text-sm">Engineering modern software, AI, and cloud platforms for ambitious teams.</p>
+            <p className="text-white/60 text-sm">
+              Engineering modern software, AI, and cloud platforms for ambitious teams.
+            </p>
           </div>
 
           <div>
-            <h4 className="text-sm font-semibold uppercase tracking-wider mb-4 text-[color:var(--brand-glow)]">Quick Links</h4>
+            <h4 className="text-sm font-semibold uppercase tracking-wider mb-4 text-[color:var(--brand-glow)]">
+              Quick Links
+            </h4>
             <ul className="space-y-2 text-sm text-white/70">
-              <li><a href="#home" className="hover:text-white transition-smooth">Home</a></li>
-              <li><a href="#about" className="hover:text-white transition-smooth">About</a></li>
-              <li><a href="#services" className="hover:text-white transition-smooth">Services</a></li>
-              <li><a href="#industries" className="hover:text-white transition-smooth">Industries</a></li>
-              <li><a href="#contact" className="hover:text-white transition-smooth">Contact</a></li>
+              <li>
+                <a href="#home" className="hover:text-white transition-smooth">
+                  Home
+                </a>
+              </li>
+              <li>
+                <a href="#about" className="hover:text-white transition-smooth">
+                  About
+                </a>
+              </li>
+              <li>
+                <a href="#services" className="hover:text-white transition-smooth">
+                  Services
+                </a>
+              </li>
+              <li>
+                <a href="#industries" className="hover:text-white transition-smooth">
+                  Industries
+                </a>
+              </li>
+              <li>
+                <a href="#contact" className="hover:text-white transition-smooth">
+                  Contact
+                </a>
+              </li>
             </ul>
           </div>
 
           <div>
-            <h4 className="text-sm font-semibold uppercase tracking-wider mb-4 text-[color:var(--brand-glow)]">Services</h4>
+            <h4 className="text-sm font-semibold uppercase tracking-wider mb-4 text-[color:var(--brand-glow)]">
+              Services
+            </h4>
             <ul className="space-y-2 text-sm text-white/70">
               <li>Software Development</li>
               <li>AI Solutions</li>
@@ -35,9 +61,18 @@ export function Footer() {
           </div>
 
           <div>
-            <h4 className="text-sm font-semibold uppercase tracking-wider mb-4 text-[color:var(--brand-glow)]">Contact</h4>
+            <h4 className="text-sm font-semibold uppercase tracking-wider mb-4 text-[color:var(--brand-glow)]">
+              Contact
+            </h4>
             <ul className="space-y-2 text-sm text-white/70">
-              <li><a href="mailto:hello@originstacktech.com" className="hover:text-white transition-smooth">hello@originstacktech.com</a></li>
+              <li>
+                <a
+                  href="mailto:info@originstacktech.com"
+                  className="hover:text-white transition-smooth"
+                >
+                  info@originstacktech.com
+                </a>
+              </li>
               <li>www.originstacktech.com</li>
             </ul>
           </div>
@@ -46,8 +81,12 @@ export function Footer() {
         <div className="border-t border-white/10 pt-6 flex flex-col md:flex-row justify-between items-center gap-3 text-sm text-white/50">
           <div>© 2026 OriginStack Technologies. All Rights Reserved.</div>
           <div className="flex gap-5">
-            <a href="#" className="hover:text-white transition-smooth">Privacy</a>
-            <a href="#" className="hover:text-white transition-smooth">Terms</a>
+            <a href="#" className="hover:text-white transition-smooth">
+              Privacy
+            </a>
+            <a href="#" className="hover:text-white transition-smooth">
+              Terms
+            </a>
           </div>
         </div>
       </div>

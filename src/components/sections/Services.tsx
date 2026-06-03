@@ -1,14 +1,55 @@
-import { Code2, Globe, Smartphone, BrainCircuit, Cloud, Palette, BarChart3, Briefcase } from "lucide-react";
+import {
+  Code2,
+  Globe,
+  Smartphone,
+  BrainCircuit,
+  Cloud,
+  Palette,
+  BarChart3,
+  Briefcase,
+} from "lucide-react";
 
 const services = [
-  { icon: Code2, title: "Custom Software Development", desc: "Tailored enterprise software engineered for performance and scale." },
-  { icon: Globe, title: "Web Application Development", desc: "Fast, accessible web platforms built with modern frameworks." },
-  { icon: Smartphone, title: "Mobile App Development", desc: "Native and cross-platform mobile experiences that delight users." },
-  { icon: BrainCircuit, title: "AI & Generative AI", desc: "LLMs, RAG pipelines, intelligent agents, and ML model deployment." },
-  { icon: Cloud, title: "Cloud Solutions & DevOps", desc: "AWS, Azure, GCP — infrastructure as code, CI/CD, observability." },
-  { icon: Palette, title: "UI/UX Design", desc: "Research-driven product design with measurable user outcomes." },
-  { icon: BarChart3, title: "Data Analytics & BI", desc: "Modern data stacks, dashboards, and ML-powered insights." },
-  { icon: Briefcase, title: "Digital Transformation", desc: "Strategy and execution to modernize teams, processes, and tech." },
+  {
+    icon: Code2,
+    title: "Custom Software Development",
+    desc: "Tailored enterprise software engineered for performance and scale.",
+  },
+  {
+    icon: Globe,
+    title: "Web Application Development",
+    desc: "Fast, accessible web platforms built with modern frameworks.",
+  },
+  {
+    icon: Smartphone,
+    title: "Mobile App Development",
+    desc: "Native and cross-platform mobile experiences that delight users.",
+  },
+  {
+    icon: BrainCircuit,
+    title: "AI & Generative AI",
+    desc: "LLMs, RAG pipelines, intelligent agents, and ML model deployment.",
+  },
+  {
+    icon: Cloud,
+    title: "Cloud Solutions & DevOps",
+    desc: "AWS, Azure, GCP — infrastructure as code, CI/CD, observability.",
+  },
+  {
+    icon: Palette,
+    title: "UI/UX Design",
+    desc: "Research-driven product design with measurable user outcomes.",
+  },
+  {
+    icon: BarChart3,
+    title: "Data Analytics & BI",
+    desc: "Modern data stacks, dashboards, and ML-powered insights.",
+  },
+  {
+    icon: Briefcase,
+    title: "Digital Transformation",
+    desc: "Strategy and execution to modernize teams, processes, and tech.",
+  },
 ];
 
 export function Services() {
@@ -20,7 +61,8 @@ export function Services() {
             Our Services
           </div>
           <h2 className="text-3xl md:text-5xl font-bold mb-4">
-            Full-stack capabilities to build <span className="text-gradient-brand">what's next</span>
+            Full-stack capabilities to build{" "}
+            <span className="text-gradient-brand">what's next</span>
           </h2>
           <p className="text-muted-foreground text-lg">
             From discovery to deployment — one accountable engineering partner.
@@ -43,7 +85,6 @@ export function Services() {
               <div className="p-6">
                 <h3 className="text-lg font-semibold mb-2">{s.title}</h3>
                 <p className="text-sm text-muted-foreground leading-relaxed">{s.desc}</p>
-
               </div>
             </div>
           ))}

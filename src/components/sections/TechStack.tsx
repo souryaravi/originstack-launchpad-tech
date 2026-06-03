@@ -1,6 +1,11 @@
+import awsLogo from "@/assets/aws.png";
+import azureLogo from "@/assets/azure.png";
+import oracleLogo from "@/assets/oracle.svg";
+import javaLogo from "@/assets/java.png";
+
 const icon = (slug: string) => `https://cdn.simpleicons.org/${slug}`;
 
-type Tech = { name: string; slug: string };
+type Tech = { name: string; slug: string; customIcon?: string };
 
 const groups: { title: string; items: Tech[] }[] = [
   {
@@ -17,37 +22,37 @@ const groups: { title: string; items: Tech[] }[] = [
     items: [
       { name: "Python", slug: "python" },
       { name: "Django", slug: "django" },
-      { name: "FastAPI", slug: "fastapi" },
+      { name: "Java", slug: "java", customIcon: javaLogo },
       { name: "Node.js", slug: "nodedotjs" },
     ],
   },
   {
     title: "Database",
     items: [
+      { name: "Oracle", slug: "oracle", customIcon: oracleLogo },
       { name: "PostgreSQL", slug: "postgresql" },
       { name: "MySQL", slug: "mysql" },
       { name: "MongoDB", slug: "mongodb" },
-      { name: "Redis", slug: "redis" },
     ],
   },
   {
     title: "Cloud & DevOps",
     items: [
-      { name: "AWS", slug: "amazonwebservices" },
-      { name: "Azure", slug: "microsoftazure" },
+      { name: "AWS", slug: "amazonwebservices", customIcon: awsLogo },
+      { name: "Azure", slug: "microsoftazure", customIcon: azureLogo },
       { name: "Docker", slug: "docker" },
       { name: "Kubernetes", slug: "kubernetes" },
     ],
   },
-  {
-    title: "AI & Data",
-    items: [
-      { name: "OpenAI", slug: "openai" },
-      { name: "LangChain", slug: "langchain" },
-      { name: "TensorFlow", slug: "tensorflow" },
-      { name: "PyTorch", slug: "pytorch" },
-    ],
-  },
+  // {
+  //   title: "AI & Data",
+  //   items: [
+  //     // { name: "OpenAI", slug: "openai" },
+  //     { name: "LangChain", slug: "langchain" },
+  //     { name: "TensorFlow", slug: "tensorflow" },
+  //     { name: "PyTorch", slug: "pytorch" },
+  //   ],
+  // },
 ];
 
 export function TechStack() {
@@ -63,7 +68,7 @@ export function TechStack() {
           </h2>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-5">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-5 max-w-6xl mx-auto">
           {groups.map((g) => (
             <div
               key={g.title}
@@ -78,12 +83,27 @@ export function TechStack() {
                     key={t.name}
                     className="group flex flex-col items-center justify-center gap-2 p-3 rounded-xl bg-muted/40 hover:bg-gradient-card hover:-translate-y-1 transition-smooth"
                   >
-                    <img
-                      src={icon(t.slug)}
-                      alt={t.name}
-                      className="h-9 w-9 object-contain group-hover:scale-110 transition-smooth"
-                      loading="lazy"
-                    />
+                    <div
+                      className={`flex items-center justify-center ${
+                        t.name === "Oracle" ? "w-16 h-10" : "w-10 h-10"
+                      }`}
+                    >
+                      {/* <img
+                        src={t.customIcon || icon(t.slug)}
+                        alt={t.name}
+                        className="max-h-full max-w-full object-contain group-hover:scale-110 transition-smooth"
+                        loading="lazy"
+                      /> */}
+                      <img
+                        src={t.customIcon || icon(t.slug)}
+                        alt={t.name}
+                        className={`object-contain group-hover:scale-110 transition-smooth ${
+                          t.name === "Java" ? "h-12 w-12" : "h-9 w-9"
+                        }`}
+                        loading="lazy"
+                      />
+                    </div>
+
                     <span className="text-xs font-medium text-center text-foreground/80">
                       {t.name}
                     </span>

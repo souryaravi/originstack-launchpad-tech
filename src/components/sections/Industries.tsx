@@ -1,14 +1,72 @@
-import { Building2, HeartPulse, ShoppingBag, GraduationCap, Factory, Home, Truck, Rocket, Check } from "lucide-react";
+import {
+  Building2,
+  HeartPulse,
+  ShoppingBag,
+  GraduationCap,
+  Factory,
+  Home,
+  Truck,
+  Rocket,
+  Check,
+} from "lucide-react";
 
 const industries = [
-  { icon: Building2, title: "FinTech & Banking", challenges: "Legacy systems, compliance, real-time fraud.", solutions: "Core modernization, KYC/AML automation, payments APIs.", benefits: ["Faster onboarding", "Reduced fraud loss", "Regulatory readiness"] },
-  { icon: HeartPulse, title: "Healthcare & Pharma", challenges: "Fragmented records, HIPAA, manual workflows.", solutions: "EHR integrations, telehealth, AI diagnostics.", benefits: ["Better patient outcomes", "Operational efficiency", "Secure data exchange"] },
-  { icon: ShoppingBag, title: "Retail & E-Commerce", challenges: "Cart abandonment, omnichannel, personalization.", solutions: "Headless commerce, recommendation engines, OMS.", benefits: ["Higher conversion", "Unified inventory", "Personalized journeys"] },
-  { icon: GraduationCap, title: "Education & E-Learning", challenges: "Engagement, scale, content delivery.", solutions: "LMS platforms, adaptive learning, AI tutors.", benefits: ["Higher completion", "Scalable delivery", "Data-driven curriculum"] },
-  { icon: Factory, title: "Manufacturing & Supply Chain", challenges: "Visibility, downtime, demand planning.", solutions: "IIoT, predictive maintenance, digital twins.", benefits: ["Reduced downtime", "Real-time visibility", "Optimized inventory"] },
-  { icon: Home, title: "Real Estate", challenges: "Lead quality, paperwork, virtual tours.", solutions: "CRM, AI valuation, immersive 3D experiences.", benefits: ["More qualified leads", "Faster closings", "Better client trust"] },
-  { icon: Truck, title: "Logistics", challenges: "Routing, tracking, last-mile cost.", solutions: "TMS, route optimization, real-time tracking.", benefits: ["Lower delivery cost", "On-time performance", "Customer satisfaction"] },
-  { icon: Rocket, title: "Startups & SaaS", challenges: "Speed to market, scaling, product-market fit.", solutions: "MVPs, multi-tenant SaaS, growth analytics.", benefits: ["Faster launches", "Investor-ready scale", "Lower burn"] },
+  {
+    icon: Building2,
+    title: "FinTech & Banking",
+    challenges: "Legacy systems, compliance, real-time fraud.",
+    solutions: "Core modernization, KYC/AML automation, payments APIs.",
+    benefits: ["Faster onboarding", "Reduced fraud loss", "Regulatory readiness"],
+  },
+  {
+    icon: HeartPulse,
+    title: "Healthcare & Pharma",
+    challenges: "Fragmented records, HIPAA, manual workflows.",
+    solutions: "EHR integrations, telehealth, AI diagnostics.",
+    benefits: ["Better patient outcomes", "Operational efficiency", "Secure data exchange"],
+  },
+  {
+    icon: ShoppingBag,
+    title: "Retail & E-Commerce",
+    challenges: "Cart abandonment, omnichannel, personalization.",
+    solutions: "Headless commerce, recommendation engines, OMS.",
+    benefits: ["Higher conversion", "Unified inventory", "Personalized journeys"],
+  },
+  {
+    icon: GraduationCap,
+    title: "Education & E-Learning",
+    challenges: "Engagement, scale, content delivery.",
+    solutions: "LMS platforms, adaptive learning, AI tutors.",
+    benefits: ["Higher completion", "Scalable delivery", "Data-driven curriculum"],
+  },
+  {
+    icon: Factory,
+    title: "Manufacturing & Supply Chain",
+    challenges: "Visibility, downtime, demand planning.",
+    solutions: "IIoT, predictive maintenance, digital twins.",
+    benefits: ["Reduced downtime", "Real-time visibility", "Optimized inventory"],
+  },
+  {
+    icon: Home,
+    title: "Real Estate",
+    challenges: "Lead quality, paperwork, virtual tours.",
+    solutions: "CRM, AI valuation, immersive 3D experiences.",
+    benefits: ["More qualified leads", "Faster closings", "Better client trust"],
+  },
+  {
+    icon: Truck,
+    title: "Logistics",
+    challenges: "Routing, tracking, last-mile cost.",
+    solutions: "TMS, route optimization, real-time tracking.",
+    benefits: ["Lower delivery cost", "On-time performance", "Customer satisfaction"],
+  },
+  {
+    icon: Rocket,
+    title: "Startups & SaaS",
+    challenges: "Speed to market, scaling, product-market fit.",
+    solutions: "MVPs, multi-tenant SaaS, growth analytics.",
+    benefits: ["Faster launches", "Investor-ready scale", "Lower burn"],
+  },
 ];
 
 export function Industries() {
@@ -42,12 +100,21 @@ export function Industries() {
                 <div className="flex-1">
                   <h3 className="text-2xl font-bold mb-3">{it.title}</h3>
                   <div className="space-y-2 text-sm">
-                    <p><span className="font-semibold text-foreground">Challenges: </span><span className="text-muted-foreground">{it.challenges}</span></p>
-                    <p><span className="font-semibold text-foreground">Solutions: </span><span className="text-muted-foreground">{it.solutions}</span></p>
+                    <p>
+                      <span className="font-semibold text-foreground">Challenges: </span>
+                      <span className="text-muted-foreground">{it.challenges}</span>
+                    </p>
+                    <p>
+                      <span className="font-semibold text-foreground">Solutions: </span>
+                      <span className="text-muted-foreground">{it.solutions}</span>
+                    </p>
                   </div>
                   <div className="mt-4 flex flex-wrap gap-2">
                     {it.benefits.map((b) => (
-                      <span key={b} className="inline-flex items-center gap-1 text-xs px-3 py-1 rounded-full bg-primary/10 text-primary font-medium">
+                      <span
+                        key={b}
+                        className="inline-flex items-center gap-1 text-xs px-3 py-1 rounded-full bg-primary/10 text-primary font-medium"
+                      >
                         <Check className="h-3 w-3" /> {b}
                       </span>
                     ))}

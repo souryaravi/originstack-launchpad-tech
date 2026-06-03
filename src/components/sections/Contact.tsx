@@ -35,19 +35,24 @@ export function Contact() {
 
         <div className="grid lg:grid-cols-2 gap-10 max-w-6xl mx-auto">
           <div className="space-y-6">
-            <div className="rounded-3xl bg-gradient-brand p-8 md:p-10 text-brand-foreground shadow-elegant relative overflow-hidden">
+            <div className="rounded-3xl bg-gradient-brand p-6 sm:p-8 md:p-10 text-brand-foreground shadow-elegant relative overflow-hidden">
               <div className="absolute -top-20 -right-20 h-64 w-64 rounded-full bg-white/10" />
               <div className="relative">
                 <h3 className="text-2xl font-bold mb-2">Contact Information</h3>
-                <p className="text-brand-foreground/80 mb-8">Talk to our experts and start your transformation.</p>
+                <p className="text-brand-foreground/80 mb-8">
+                  Talk to our experts and start your transformation.
+                </p>
                 <div className="space-y-5">
-                  <a href="mailto:hello@originstacktech.com" className="flex items-center gap-4 group">
+                  <a
+                    href="mailto:info@originstacktech.com"
+                    className="flex items-center gap-4 group"
+                  >
                     <div className="h-12 w-12 rounded-xl bg-white/15 backdrop-blur flex items-center justify-center group-hover:scale-110 transition-smooth">
                       <Mail className="h-5 w-5" />
                     </div>
-                    <div>
+                    <div className="min-w-0 flex-1">
                       <div className="text-xs uppercase tracking-wider opacity-80">Email</div>
-                      <div className="font-semibold">hello@originstacktech.com</div>
+                      <div className="font-semibold break-all">info@originstacktech.com</div>
                     </div>
                   </a>
                   <div className="flex items-center gap-4">
@@ -73,7 +78,10 @@ export function Contact() {
             </div>
           </div>
 
-          <form onSubmit={onSubmit} className="rounded-3xl border border-border bg-card p-8 md:p-10 shadow-card space-y-5">
+          <form
+            onSubmit={onSubmit}
+            className="rounded-3xl border border-border bg-card p-6 sm:p-8 md:p-10 shadow-card space-y-5"
+          >
             <div className="grid sm:grid-cols-2 gap-5">
               <div>
                 <label className="text-sm font-medium mb-2 block">Name</label>
@@ -94,10 +102,21 @@ export function Contact() {
             </div>
             <div>
               <label className="text-sm font-medium mb-2 block">Message</label>
-              <Textarea required name="message" rows={4} placeholder="Tell us about your project..." />
+              <Textarea
+                required
+                name="message"
+                rows={4}
+                placeholder="Tell us about your project..."
+              />
             </div>
             <Button type="submit" variant="brand" size="lg" className="w-full" disabled={loading}>
-              {loading ? "Sending..." : (<>Send Message <Send className="ml-1 h-4 w-4" /></>)}
+              {loading ? (
+                "Sending..."
+              ) : (
+                <>
+                  Send Message <Send className="ml-1 h-4 w-4" />
+                </>
+              )}
             </Button>
           </form>
         </div>
