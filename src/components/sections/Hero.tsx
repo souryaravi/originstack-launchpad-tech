@@ -1,6 +1,5 @@
 import { Button } from "@/components/ui/button";
 import { ArrowRight, Sparkles } from "lucide-react";
-import heroBg from "@/assets/hero-bg.jpg";
 import heroShowcase from "@/assets/hero-showcase.jpg";
 
 const stats = [
@@ -27,11 +26,11 @@ export function Hero() {
       {/* Background */}
       <div className="absolute inset-0 -z-10">
         <img
-          src={heroBg}
-          alt=""
+          src={heroShowcase}
+          alt="OriginStack Technologies background"
           width={1920}
           height={1280}
-          className="w-full h-full object-cover opacity-30 dark:opacity-40"
+          className="w-full h-full object-cover opacity-40 dark:opacity-50"
         />
         <div className="absolute inset-0 bg-gradient-to-b from-background/60 via-background/80 to-background" />
         <div className="absolute inset-0 bg-gradient-hero" />
@@ -89,17 +88,6 @@ export function Hero() {
                 <div className="text-xs md:text-sm text-muted-foreground mt-1">{s.label}</div>
               </div>
             ))}
-          </div>
-
-          <div className="mt-16 relative rounded-3xl overflow-hidden border border-border shadow-elegant glass">
-            <img
-              src={heroShowcase}
-              alt="OriginStack Technologies team collaborating on digital solutions"
-              width={1024}
-              height={768}
-              className="w-full h-auto object-cover"
-            />
-            <div className="absolute inset-0 bg-gradient-to-t from-background/60 via-transparent to-transparent pointer-events-none" />
           </div>
         </div>
       </div>
