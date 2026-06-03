@@ -89,17 +89,6 @@ export function Hero() {
               </div>
             ))}
           </div>
-
-          <div className="mt-16 relative rounded-3xl overflow-hidden border border-border shadow-elegant glass">
-            <img
-              src={heroShowcase}
-              alt="OriginStack Technologies team collaborating on digital solutions"
-              width={1024}
-              height={768}
-              className="w-full h-auto object-cover"
-            />
-            <div className="absolute inset-0 bg-gradient-to-t from-background/60 via-transparent to-transparent pointer-events-none" />
-          </div>
         </div>
       </div>
     </section>
