@@ -24,6 +24,8 @@ const groups: { title: string; items: Tech[] }[] = [
       { name: "Django", slug: "django" },
       { name: "Java", slug: "java", customIcon: javaLogo },
       { name: "Node.js", slug: "nodedotjs" },
+      { name: "Ruby", slug: "ruby" },
+      { name: "Rails", slug: "rubyonrails" },
     ],
   },
   {
