@@ -86,6 +86,13 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       { property: "og:type", content: "website" },
       { property: "og:site_name", content: "OriginStack Technologies" },
       { name: "twitter:card", content: "summary_large_image" },
+      { property: "og:title", content: "OriginStack Technologies" },
+      { name: "twitter:title", content: "OriginStack Technologies" },
+      { name: "description", content: "Build a premium, responsive IT company website for OriginStack Technologies." },
+      { property: "og:description", content: "Build a premium, responsive IT company website for OriginStack Technologies." },
+      { name: "twitter:description", content: "Build a premium, responsive IT company website for OriginStack Technologies." },
+      { property: "og:image", content: "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/fe3f4a0d-d959-4fa1-a95f-9894e53fe89e/id-preview-7b767fe3--12db15ef-192d-4024-911a-4b53b341eb0c.lovable.app-1780485779370.png" },
+      { name: "twitter:image", content: "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/fe3f4a0d-d959-4fa1-a95f-9894e53fe89e/id-preview-7b767fe3--12db15ef-192d-4024-911a-4b53b341eb0c.lovable.app-1780485779370.png" },
     ],
     links: [
       { rel: "stylesheet", href: appCss },
